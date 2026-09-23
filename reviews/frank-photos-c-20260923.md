@@ -15,3 +15,5 @@
 修改範圍：`v2/c/index.html`、`v2/c/style.css` 與新增的 `v2/assets/frank-*.webp`。A 版與原版內容不改。修改前的 Git tag 為 `v2-before-frank-photos-20260923`（已推至 origin）；修改前的 Cloudflare Pages 永久部署網址為 `https://2dac87a2.52-house-preview.pages.dev`。
 
 若要將三張替代照換為 Frank 指定的同一張，仍需其原始照片檔案或可直接存取的相簿位置。
+
+本次 C 版已部署至 `https://52-house-preview.pages.dev/v2/c/`，永久部署網址為 `https://78732ad1.52-house-preview.pages.dev/v2/c/`。實機瀏覽器檢查 360px、390px、1440px 畫面：無橫向溢出或失效圖片，手機導覽與相簿放大功能可用。線上 390px 頁面讀取狀態 200、圖片完整，根頁與 A 版檔案仍與 Git 版本一致。
