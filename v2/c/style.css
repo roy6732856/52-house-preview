@@ -77,13 +77,11 @@ dialog::backdrop{background:rgba(22,43,21,.88)}
 .dining-list p{font-size:15px}
 @media(min-width:651px) and (max-width:1050px){.site-header nav{gap:16px;font-size:13px}.header-contact{display:none}.delivery-options,.dining-list{gap:30px}.service-heading h2{font-size:38px}}
 @media(max-width:650px){
- .intro-photo{height:auto}
- .intro-photo>img{height:330px;object-position:center}
- .intro-photo:after{display:none}
- .intro-photo .photo-copy{position:static;padding:35px var(--gutter) 45px;color:var(--green);background:var(--paper)}
- .intro-photo .photo-copy p{color:var(--green)}
- .intro-photo .white-link{border-color:var(--green)}
- .intro-photo .small-label{color:var(--orange)}
+ .intro-photo{height:auto;min-height:740px;display:grid;align-items:start}
+ .intro-photo>img{position:absolute;inset:0;width:100%;height:100%;object-position:51% center}
+ .intro-photo:after{display:block;background:linear-gradient(180deg,rgba(22,43,21,.84) 0%,rgba(22,43,21,.62) 62%,rgba(22,43,21,.08) 100%)}
+ .intro-photo .photo-copy{position:relative;top:auto;left:auto;right:auto;padding:36px var(--gutter) 180px;color:var(--paper)}
+ .intro-photo .photo-copy p{color:var(--paper)}
  .statement-art .care-label{font-size:21px;line-height:1.25}
  .ice-split .split-copy h2{font-size:30px;letter-spacing:-1px}
  .service-heading{display:block;margin-bottom:30px}
