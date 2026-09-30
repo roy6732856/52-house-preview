@@ -51,3 +51,53 @@ dialog::backdrop{background:rgba(22,43,21,.88)}
  .album .gallery-item img{object-position:center}
  .last-photo:after{background:linear-gradient(90deg,rgba(22,43,21,.8),transparent 100%)}
 }
+
+/* September 30: venue details, delivery offers and dining information. */
+.season-copy{margin-top:18px}
+.statement-art .care-label{font-size:36px;line-height:1.25;text-align:center;align-content:center}
+.service-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+.service-heading .small-label{color:var(--orange)}
+.service-heading>p{max-width:320px;color:var(--muted)}
+.delivery{border-bottom:1px solid var(--line)}
+.delivery-options{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.delivery-options article{border-top:2px solid var(--orange);padding:28px 0}
+.delivery-options h3{font-size:27px;margin-bottom:20px}
+.delivery-minimum{margin-bottom:22px}
+.delivery-minimum strong{display:block;font-size:38px;font-weight:600;color:var(--orange);line-height:1.5}
+.delivery-options dl{margin:0 0 20px}
+.delivery-options dl>div{display:grid;grid-template-columns:100px 1fr;gap:20px;border-bottom:1px solid var(--line);padding:14px 0;font-size:16px;line-height:1.8}
+.delivery-options dt{font-weight:500}
+.delivery-options dd{margin:0}
+.delivery-options article>p:last-child{font-size:14px;color:var(--muted)}
+.delivery-action{display:flex;gap:28px;align-items:center;margin-top:12px}
+.dining-list{list-style:none;counter-reset:dining;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:30px 60px}
+.dining-list li{counter-increment:dining;border-top:1px solid var(--line);padding:25px 0 0 46px;position:relative}
+.dining-list li:before{content:counter(dining,decimal-leading-zero);position:absolute;left:0;top:28px;color:var(--orange);font-size:14px}
+.dining-list h3{font-size:22px;margin-bottom:14px}
+.dining-list p{font-size:15px}
+@media(min-width:651px) and (max-width:1050px){.site-header nav{gap:16px;font-size:13px}.header-contact{display:none}.delivery-options,.dining-list{gap:30px}.service-heading h2{font-size:38px}}
+@media(max-width:650px){
+ .intro-photo{height:auto}
+ .intro-photo>img{height:330px;object-position:center}
+ .intro-photo:after{display:none}
+ .intro-photo .photo-copy{position:static;padding:35px var(--gutter) 45px;color:var(--green);background:var(--paper)}
+ .intro-photo .photo-copy p{color:var(--green)}
+ .intro-photo .white-link{border-color:var(--green)}
+ .intro-photo .small-label{color:var(--orange)}
+ .statement-art .care-label{font-size:21px;line-height:1.25}
+ .ice-split .split-copy h2{font-size:30px;letter-spacing:-1px}
+ .service-heading{display:block;margin-bottom:30px}
+ .service-heading h2{font-size:32px}
+ .service-heading>p{font-size:14px;margin-top:24px}
+ .delivery-options,.dining-list{grid-template-columns:1fr;gap:12px}
+ .delivery-options article{padding:25px 0}
+ .delivery-options h3{font-size:24px}
+ .delivery-minimum strong{font-size:34px}
+ .delivery-options dl>div{grid-template-columns:80px 1fr;gap:15px;font-size:15px}
+ .delivery-action{flex-wrap:wrap;gap:18px}
+ .dining-list li{padding:24px 0 20px 36px}
+ .dining-list h3{font-size:21px}
+ .dining-list li:before{top:27px;font-size:12px}
+}
+
+@media(max-width:650px){.contact-grid .opening-hours{grid-column:1/-1}}
