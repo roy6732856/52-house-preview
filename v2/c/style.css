@@ -115,3 +115,10 @@ footer .version-links{margin-top:24px;padding-top:20px;border-top:1px solid var(
 .official-links a{display:block;width:fit-content;min-height:44px;padding:6px 0}
 .footer-top>div{flex-wrap:wrap}
 @media(max-width:650px){.mobile-dock{gap:8px}.mobile-dock a{width:auto;flex:1;font-size:13px}.mobile-dock a[href^="https://lin.ee"]{background:var(--paper);color:var(--orange);border-color:var(--orange)}.official-links{grid-column:1/-1}.footer-top>div a{min-height:44px;display:inline-flex;align-items:center}}
+
+/* Official LINE floating contact; keep clear of mobile navigation. */
+.line-float{position:fixed;right:24px;bottom:24px;z-index:11;display:flex;align-items:center;justify-content:center;gap:9px;min-height:56px;padding:14px 18px;border-radius:999px;background:var(--green);color:var(--paper);border:1px solid var(--paper);box-shadow:0 4px 16px rgba(22,43,21,.18);font-size:14px;font-weight:600}
+.line-float svg{flex-shrink:0}
+.line-float:hover{background:var(--orange)}
+body.modal-open .line-float{visibility:hidden}
+@media(max-width:650px){.line-float{right:14px;bottom:calc(84px + env(safe-area-inset-bottom));min-height:52px;padding:12px 15px;font-size:13px;gap:7px}.line-float svg{width:20px;height:20px}.mobile-dock a{font-size:14px}}

@@ -10,8 +10,8 @@ if u.scheme!='https' or not u.hostname or u.path or u.query or u.fragment: p.err
 if args.production and u.hostname.endswith('pages.dev'):p.error('Production requires the purchased domain')
 dst=ROOT/'delivery-dist';dst.mkdir(exist_ok=True)
 for name in ['assets','brand-assets','v2','a','c','compare','previews']:
- if (ROOT/name).exists():shutil.copytree(ROOT/name,dst/name,dirs_exist_ok=True)
-for name in ['shared.js','shared.css']:shutil.copy2(ROOT/name,dst/name)
+ if (ROOT/name).exists():shutil.copytree(ROOT/name,dst/name,dirs_exist_ok=True,copy_function=shutil.copyfile)
+for name in ['shared.js','shared.css']:shutil.copyfile(ROOT/name,dst/name)
 s=(ROOT/'v2/c/index.html').read_text()
 entity={'@context':'https://schema.org','@type':'Restaurant','@id':origin+'/#restaurant','name':'伍貳居所','url':origin+'/','description':'橘二代位於苗栗泰安清安村的老屋餐廳，供應客家火鍋與義式手作冰淇淋。','telephone':'+886-37-941-068','image':[origin+'/v2/assets/frank-table.webp'],'logo':origin+'/brand-assets/orange-logo.png','address':{'@type':'PostalAddress','streetAddress':'清安村13鄰二十份1號','addressLocality':'泰安鄉','addressRegion':'苗栗縣','addressCountry':'TW'},'servesCuisine':['客家料理','火鍋','義式手作冰淇淋'],'openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Thursday','Friday','Saturday','Sunday'],'opens':'10:00','closes':'20:00'}],'sameAs':['https://lin.ee/qrXVp1U','https://www.facebook.com/p/伍貳居所-61569992565634/','https://www.instagram.com/52hungry.house/']}
 head=f'''<link rel="canonical" href="{origin}/">
