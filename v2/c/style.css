@@ -122,3 +122,50 @@ footer .version-links{margin-top:24px;padding-top:20px;border-top:1px solid var(
 .line-float:hover{background:var(--orange)}
 body.modal-open .line-float{visibility:hidden}
 @media(max-width:650px){.line-float{right:14px;bottom:calc(84px + env(safe-area-inset-bottom));min-height:52px;padding:12px 15px;font-size:13px;gap:7px}.line-float svg{width:20px;height:20px}.mobile-dock a{font-size:14px}}
+
+/* Mobile reading pass: body copy 17px, controls 16px, secondary labels 14px+. */
+@media(max-width:650px){
+ body{font-size:17px}
+ p,.hero-intro p,.photo-copy p,.section-title>p:last-child,.menu-list p,
+ .menu-note,.split-copy p,.story-copy p,.contact-title p,.contact-grid p,
+ .contact-grid a,.faq details p,.service-heading>p,.delivery-options article>p:last-child,
+ .dining-list p,.footer-top p{font-size:1.0625rem;line-height:1.85}
+ .location{font-size:1rem;line-height:1.8}
+ .location strong{font-size:1.1875rem}
+ .small-label,.menu-line span,.statement-copy>p,.gallery-item>span,
+ .credit,dialog p,.version-links{font-size:.875rem;line-height:1.75}
+ .statement-copy>p{font-size:.9375rem;white-space:normal;max-width:12em}
+ .menu-line{align-items:flex-start;flex-wrap:wrap;gap:8px 16px}
+ .menu-line h3{font-size:1.375rem}
+ .menu-note{font-size:1rem}
+ .button,.white-link,.text-link,.album-title .text-link,.footer-top>div,
+ .mobile-dock a,.faq summary{font-size:1rem;line-height:1.6}
+ .button,.white-link,.text-link,.site-header nav a{min-height:48px}
+ .menu-toggle{width:44px;height:44px;padding:11px 6px}
+ .contact-grid h3{font-size:1.25rem}
+ .contact-grid a{margin-right:0}
+ .delivery-options dl>div{font-size:1.0625rem;grid-template-columns:5em 1fr;gap:14px}
+ .dining-list h3{font-size:1.375rem}
+ .line-float{font-size:.9375rem;min-height:52px;bottom:calc(92px + env(safe-area-inset-bottom))}
+ .mobile-dock a{min-height:48px}
+ .footer-top>div{gap:12px 24px}
+ .version-links{display:block}
+ .version-links>span{display:block;margin-top:8px}
+ .intro-photo .photo-copy{padding-bottom:180px}
+}
+@media(max-width:420px){.contact-grid{grid-template-columns:1fr;gap:28px}.delivery-options dl>div{grid-template-columns:4.5em 1fr}.menu-line{display:block}.menu-line span{margin-top:6px}}
+@media(max-width:650px){
+ .brand-statement{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .statement-copy{min-width:0}
+ .statement-copy>p{width:calc(100vw - 40px);max-width:none}
+ .statement-copy h2{font-size:clamp(27px,8.5vw,35px);white-space:nowrap}
+ .statement-art img{width:min(56vw,230px)}
+}
+@media(max-width:650px){
+ html{scroll-padding-bottom:160px}
+ footer{padding-bottom:calc(160px + env(safe-area-inset-bottom))}
+ .site-header nav.open{max-height:calc(100dvh - 170px);overflow-y:auto;overscroll-behavior:contain}
+ .faq summary{min-height:56px;align-items:center}
+ .faq summary span{flex-shrink:0}
+ .gallery-item>span{min-height:48px}
+}
