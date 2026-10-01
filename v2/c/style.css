@@ -110,3 +110,8 @@ html{scroll-padding-top:24px}
 
 footer .version-links{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
 .hotpot .credit{display:block}
+
+/* Official social links: retain brand palette and mobile touch targets. */
+.official-links a{display:block;width:fit-content;min-height:44px;padding:6px 0}
+.footer-top>div{flex-wrap:wrap}
+@media(max-width:650px){.mobile-dock{gap:8px}.mobile-dock a{width:auto;flex:1;font-size:13px}.mobile-dock a[href^="https://lin.ee"]{background:var(--paper);color:var(--orange);border-color:var(--orange)}.official-links{grid-column:1/-1}.footer-top>div a{min-height:44px;display:inline-flex;align-items:center}}

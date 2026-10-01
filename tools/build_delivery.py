@@ -13,7 +13,7 @@ for name in ['assets','brand-assets','v2','a','c','compare','previews']:
  if (ROOT/name).exists():shutil.copytree(ROOT/name,dst/name,dirs_exist_ok=True)
 for name in ['shared.js','shared.css']:shutil.copy2(ROOT/name,dst/name)
 s=(ROOT/'v2/c/index.html').read_text()
-entity={'@context':'https://schema.org','@type':'Restaurant','@id':origin+'/#restaurant','name':'伍貳居所','url':origin+'/','description':'橘二代位於苗栗泰安清安村的老屋餐廳，供應客家火鍋與義式手作冰淇淋。','telephone':'+886-37-941-068','image':[origin+'/v2/assets/frank-table.webp'],'logo':origin+'/brand-assets/orange-logo.png','address':{'@type':'PostalAddress','streetAddress':'清安村13鄰二十份1號','addressLocality':'泰安鄉','addressRegion':'苗栗縣','addressCountry':'TW'},'servesCuisine':['客家料理','火鍋','義式手作冰淇淋'],'openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Thursday','Friday','Saturday','Sunday'],'opens':'10:00','closes':'20:00'}],'sameAs':['https://www.facebook.com/p/伍貳居所-61569992565634/','https://www.instagram.com/52hungry.house/']}
+entity={'@context':'https://schema.org','@type':'Restaurant','@id':origin+'/#restaurant','name':'伍貳居所','url':origin+'/','description':'橘二代位於苗栗泰安清安村的老屋餐廳，供應客家火鍋與義式手作冰淇淋。','telephone':'+886-37-941-068','image':[origin+'/v2/assets/frank-table.webp'],'logo':origin+'/brand-assets/orange-logo.png','address':{'@type':'PostalAddress','streetAddress':'清安村13鄰二十份1號','addressLocality':'泰安鄉','addressRegion':'苗栗縣','addressCountry':'TW'},'servesCuisine':['客家料理','火鍋','義式手作冰淇淋'],'openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Thursday','Friday','Saturday','Sunday'],'opens':'10:00','closes':'20:00'}],'sameAs':['https://lin.ee/qrXVp1U','https://www.facebook.com/p/伍貳居所-61569992565634/','https://www.instagram.com/52hungry.house/']}
 head=f'''<link rel="canonical" href="{origin}/">
 <meta property="og:type" content="website"><meta property="og:locale" content="zh_TW"><meta property="og:site_name" content="伍貳居所・橘二代"><meta property="og:title" content="伍貳居所｜苗栗泰安客家火鍋與手作冰淇淋"><meta property="og:description" content="在泰安老屋吃客家銅鍋，飯後來一份水果冰淇淋。查看餐點、用餐須知與外送方案，來電預約聚餐。"><meta property="og:url" content="{origin}/"><meta property="og:image" content="{origin}/v2/assets/frank-table.webp"><meta property="og:image:alt" content="伍貳居所老屋旁的戶外餐桌"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{json.dumps(entity,ensure_ascii=False)}</script>
@@ -32,4 +32,4 @@ if not args.production:headers+='  X-Robots-Tag: noindex, nofollow\n'
 else:
  for route in ['/v2/*','/a/*','/c/*','/compare/*','/previews/*']:headers+=route+'\n  X-Robots-Tag: noindex, nofollow\n'
 (dst/'_headers').write_text(headers)
-print(json.dumps({'output':str(dst),'origin':origin,'production':args.production,'line':'pending; phone CTA retained'},ensure_ascii=False))
+print(json.dumps({'output':str(dst),'origin':origin,'production':args.production,'line':'https://lin.ee/qrXVp1U'},ensure_ascii=False))
