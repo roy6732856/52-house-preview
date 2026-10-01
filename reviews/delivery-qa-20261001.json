@@ -1,0 +1,51 @@
+[
+  {
+    "width": 360,
+    "overflow": false,
+    "broken": [],
+    "badAnchors": [],
+    "previewText": false,
+    "h1": 1,
+    "canonical": "https://52-house-preview.pages.dev/",
+    "schema": "Restaurant",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "broken": [],
+    "badAnchors": [],
+    "previewText": false,
+    "h1": 1,
+    "canonical": "https://52-house-preview.pages.dev/",
+    "schema": "Restaurant",
+    "nav": true,
+    "dining": true,
+    "gallery": true,
+    "closed": true,
+    "faq": true,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "broken": [],
+    "badAnchors": [],
+    "previewText": false,
+    "h1": 1,
+    "canonical": "https://52-house-preview.pages.dev/",
+    "schema": "Restaurant",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "broken": [],
+    "badAnchors": [],
+    "previewText": false,
+    "h1": 1,
+    "canonical": "https://52-house-preview.pages.dev/",
+    "schema": "Restaurant",
+    "errors": []
+  }
+]

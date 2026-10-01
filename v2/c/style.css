@@ -99,3 +99,14 @@ dialog::backdrop{background:rgba(22,43,21,.88)}
 }
 
 @media(max-width:650px){.contact-grid .opening-hours{grid-column:1/-1}}
+
+/* Delivery polish: keyboard focus, anchors and stable intrinsic image sizes. */
+html{scroll-padding-top:24px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+.photo-copy :focus-visible,.story-copy :focus-visible{outline-color:var(--paper)}
+.brand img,.contact-logo{height:auto}
+.contact-grid a{overflow-wrap:anywhere}
+@media(max-width:650px){.version-links{flex-wrap:wrap;line-height:1.8}.white-link{min-height:44px}.contact-grid a{display:inline-block;min-height:44px;padding:6px 0}}
+
+footer .version-links{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.hotpot .credit{display:block}
