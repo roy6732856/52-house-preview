@@ -8,3 +8,14 @@
 
 /* Lead mobile story anchors with the section heading rather than the photograph. */
 @media(max-width:700px){.story-copy{order:-1}}
+
+/* Mobile reading sizes: keep supporting information readable without zooming. */
+@media(max-width:700px){
+ body{font-size:18px;line-height:1.8}
+ .lead{font-size:18px}
+ .eyebrow,.hero-note,.hero-photo figcaption,figcaption,.source,.product-note,.image-note,.step,thead th,.footer-brand span,footer>p{font-size:16px}
+ .button,.text-link,.line-float,footer>div{font-size:17px}
+ th,td{font-size:18px}
+ thead th{font-size:16px}
+ .chapter-strip{font-size:16px;flex-wrap:wrap;gap:8px 20px}
+}
