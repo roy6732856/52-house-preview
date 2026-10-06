@@ -5,3 +5,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 .skip{opacity:0;pointer-events:none}.skip:focus{opacity:1;pointer-events:auto}
+
+/* Lead mobile story anchors with the section heading rather than the photograph. */
+@media(max-width:700px){.story-copy{order:-1}}
