@@ -4,7 +4,11 @@ import argparse, json, shutil, re
 from pathlib import Path
 from urllib.parse import urlparse
 ROOT=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--origin',default='https://52-house-preview.pages.dev');p.add_argument('--production',action='store_true');args=p.parse_args()
+config_path=ROOT/'site-release.json'
+config=json.loads(config_path.read_text()) if config_path.exists() else {}
+p=argparse.ArgumentParser();p.add_argument('--origin',default=config.get('origin','https://52-house-preview.pages.dev'))
+mode=p.add_mutually_exclusive_group();mode.add_argument('--production',dest='production',action='store_true');mode.add_argument('--preview',dest='production',action='store_false')
+p.set_defaults(production=config.get('production',False));args=p.parse_args()
 origin=args.origin.rstrip('/');u=urlparse(origin)
 if u.scheme!='https' or not u.hostname or u.path or u.query or u.fragment: p.error('--origin must be an HTTPS origin')
 if args.production and u.hostname.endswith('pages.dev'):p.error('Production requires the purchased domain')
@@ -37,6 +41,7 @@ urls=f'<url><loc>{origin}/</loc></url><url><loc>{origin}/oranges/</loc></url>' i
 headers='/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n'
 if not args.production:headers+='  X-Robots-Tag: noindex, nofollow\n'
 else:
+ headers+='https://:project.pages.dev/*\n  X-Robots-Tag: noindex, nofollow\nhttps://:version.:project.pages.dev/*\n  X-Robots-Tag: noindex, nofollow\n'
  for route in ['/v2/*','/a/*','/c/*','/compare/*','/previews/*']:headers+=route+'\n  X-Robots-Tag: noindex, nofollow\n'
 (dst/'_headers').write_text(headers)
 print(json.dumps({'output':str(dst),'origin':origin,'production':args.production,'line':'https://lin.ee/qrXVp1U'},ensure_ascii=False))
